@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.master');
+    return view('userSide.mainPage');
 });
-Route::group(["middleware" => "auth"], function () {
+//"middleware" => "auth"
+Route::group([], function () {
     Route::get('/sell', 'FriendController@index');
     Route::post('/sell', 'FriendController@store');
     Route::get('/sold', 'FriendController@friendSold');

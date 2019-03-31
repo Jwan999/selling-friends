@@ -3,27 +3,27 @@
 
     <div id="sold" class="row justify-content-center">
 
-        <div class="col-md-4">
+        <div v-for="friend in friends" class="col-md-4">
             <div class="card mt-2">
                 <div class="card-body font">
                     <div class="image">
                         <img :src="friend.image">
                     </div>
-                    <div class="content">
-                        <a class="header">@{{ friend.name }}</a>
+                    <div class="content text-center">
+                        <a class="header ">@{{ friend.name }}</a>
                         <div class="meta">
                             <span class="date">@{{ friend.price }}</span>
                         </div>
                         <div class="description">@{{ friend.reason }}</div>
                     </div>
                     <div class="extra content">
-                        <hr>
-                        <div class="social-buttons">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}"
-                               target="_blank">
-                                <i class="fa fa-facebook-official"></i>
-                            </a>
-                        </div>
+                        {{--<hr>--}}
+                        {{--<div class="social-buttons">--}}
+                            {{--<a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}"--}}
+                               {{--target="_blank">--}}
+                                {{--<i class="fa fa-facebook-official"></i>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
 
@@ -39,17 +39,19 @@
         let vue = new Vue({
             el: "#sold",
             data: {
-                friends: {},
+                friends: {
+                    friend: {},
+                },
             },
             methods: {
-                getSoldFriends() {
+                getFriends() {
                     axios.get('/api/friends').then(response => {
                         this.friends = response.data.friends;
                     })
                 }
             },
             mounted() {
-                this.getSoldFriends()
+                this.getFriends()
             }
         })
     </script>

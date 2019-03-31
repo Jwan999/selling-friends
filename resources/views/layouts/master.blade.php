@@ -51,6 +51,10 @@
             /*height: 10vh;*/
             object-fit: cover;
         }
+        .card{
+            border-radius: 19px;
+
+        }
     </style>
     <title>Document</title>
 </head>
@@ -58,6 +62,9 @@
 
 <div class="ui sidebar bg-light vertical menu">
     <a href="/sell" class="item mt-5">
+        main page
+    </a>
+    <a href="/sell" class="item">
         sell a friend
     </a>
     <a href="/friends" class="item">
