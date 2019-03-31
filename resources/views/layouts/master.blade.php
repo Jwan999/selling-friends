@@ -57,8 +57,6 @@
 <body style="" class="bg-light">
 
 <div class="ui sidebar bg-light vertical menu">
-    <img src="{{auth()->user()->avatar}}">
-
     <a href="/sell" class="item mt-5">
         sell a friend
     </a>
