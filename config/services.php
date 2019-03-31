@@ -46,7 +46,7 @@ return [
     'facebook' => [
         'client_id' => '2745151175525950',
         'client_secret' => 'ff0da4a4c60770a5506630fda55b33f3',
-        'redirect' => 'https://sellingfriends.herokuapp.com//facebook/callback',
+        'redirect' => 'https://sellingfriends.herokuapp.com/facebook/callback',
     ],
 
 ];
