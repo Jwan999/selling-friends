@@ -48,6 +48,9 @@
                         this.users = response.data.users
                     })
                 }
+            },
+            mounted(){
+                this.getUsers()
             }
         })
     </script>
