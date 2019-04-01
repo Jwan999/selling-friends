@@ -11,4 +11,9 @@ class Friend extends Model
     ];
     public $table = "friends";
 
+    public function user()
+    {
+        return $this->hasOne('App\User');
+    }
+
 }
