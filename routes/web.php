@@ -14,8 +14,7 @@
 Route::get('/', function () {
     return view('userSide.mainPage');
 });
-//"middleware" => "auth"
-Route::group([], function () {
+Route::group(["middleware" => "auth"], function () {
     Route::get('/sell', 'FriendController@index');
     Route::post('/sell', 'FriendController@store');
     Route::get('/sold', 'FriendController@friendSold');
@@ -24,7 +23,7 @@ Route::group([], function () {
 });
 
 Route::get('/api/users', 'UserController@usersApi');
-Route::get('/dashboard/users','UserController@index');
+Route::get('/dashboard/users', 'UserController@index');
 
 Route::get('/redirect/facebook', 'Auth\LoginController@redirectToProvider')
     ->name('login');

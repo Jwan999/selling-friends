@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <div id="users" class="row">
-        <div class="col">
+    <div id="users" class="row justify-content-center">
+        <div class="col-md-4">
             <div class="card mt-3">
                 <div class="card-body">
                     <table class="ui very basic collapsing celled table">
@@ -22,8 +22,8 @@
                                     </div>
                                 </h4>
                             </td>
-                            <td>
-                                22
+                            <td class="text-center">
+                                @{{ user.id }}
                             </td>
                         </tr>
                         </tbody>
