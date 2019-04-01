@@ -20,7 +20,7 @@ class UserController extends Controller
 
     public function usersApi()
     {
-        $users = User::orderBy('id');
+        $users = User::orderBy('id')->get();
         $response = [
             "success" => true,
             "users" => $users
