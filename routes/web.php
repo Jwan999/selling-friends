@@ -23,6 +23,7 @@ Route::group([], function () {
     Route::get('/friends', 'FriendController@soldFriendPage');
 });
 
+Route::get('/api/users', 'UserController@usersApi');
 
 Route::get('/redirect/facebook', 'Auth\LoginController@redirectToProvider')
     ->name('login');

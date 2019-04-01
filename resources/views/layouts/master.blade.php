@@ -61,7 +61,7 @@
 <body style="" class="bg-light">
 
 <div class="ui sidebar bg-light vertical menu">
-    <a href="/sell" class="item mt-5">
+    <a href="/" class="item mt-5">
         main page
     </a>
     <a href="/sell" class="item">
