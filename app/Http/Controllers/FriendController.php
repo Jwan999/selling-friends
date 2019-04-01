@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Friend;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-use App\User;
 
 class FriendController extends Controller
 {
@@ -54,7 +53,7 @@ class FriendController extends Controller
 
     public function soldFriendApi()
     {
-        $friends = User::find("user_id")->friends;
+        $friends = Friend::orderBy('id')->where("user_id", auth()->ueer()->id)->get();
         $response = [
             "success" => true,
             "friends" => $friends,
