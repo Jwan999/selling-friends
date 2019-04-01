@@ -53,53 +53,62 @@
             /*height: 10vh;*/
             object-fit: cover;
         }
-        .card{
+
+        .card {
             border-radius: 19px;
 
         }
+        
     </style>
-    <title>Document</title>
+    <title>Sell Your Friends</title>
 </head>
-<body style="" class="bg-light">
+<body class="bg-light">
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="ui centered mini mx modal">
 
-<div class="ui sidebar bg-light vertical menu">
-    <a href="/" class="item mt-5">
-        main page
-    </a>
-    <a href="/sell" class="item">
-        sell a friend
-    </a>
-    <a href="/friends" class="item">
-        the friend's you've sold
-    </a>
-</div>
-<div class="pusher">
-    <!-- Site content !-->
-    <div id="sideBar">
-        <div class="row ">
-            <div class="col ">
-                <button @click="toggle" class="ui bg-light small right attached fixed button mt-3 sticky">
-                    <i class="align left icon"></i>
-                </button>
-                <button class="ui bg-light small left mt-3 attached fixed button float-right">
-                    @unless(Auth::check())
-                        <a href="{{ url('/redirect/facebook') }}"><i
-                                    class="fa fa-facebook mr-1"></i>Sign in with facebook</a>
-                    @endunless
-                    @if(Auth::check())
-                        {{auth()->user()->name}}
-                        <br>
-                        <a class="text-dark" href="/logout">Logout</a>
-                    @endif
-                </button>
-            </div>
         </div>
 
     </div>
+</div>
 
-    <div class="container">
-        @yield('content')
+<!-- Site content !-->
+<div id="main">
+    <div class="row">
+        <div class="col mt-3">
+            <button class="ui bg-light small right attached fixed button mt-1 sticky">
+                <i class="user plus icon"></i>
+                <a href="/sell"></a>
+            </button>
+            <button class="ui bg-light small right attached fixed button mt-5 sticky">
+                <i class="list ul icon"></i>
+                <a href="/friends"></a>
+            </button>
+
+            <button class="ui bg-light small left attached fixed button float-right">
+                <a class="text-dark" href="/">Main page</a>
+                <br>
+                <br>
+                @unless(Auth::check())
+                    <a @click="showModal" class="text-dark">Sign up</a>
+                    {{--<a href="{{ url('/redirect/facebook') }}"><i--}}
+                    {{--class="fa fa-facebook mr-1"></i>Sign in with facebook</a>--}}
+                @endunless
+                @if(Auth::check())
+                    {{auth()->user()->name}}
+                    <br>
+                    <a class="text-dark" href="/logout">Logout</a>
+                @endif
+            </button>
+
+        </div>
     </div>
+
+</div>
+
+<div class="container">
+
+    @yield('content')
 </div>
 
 <script
@@ -112,12 +121,13 @@
 
 <script>
     new Vue({
-        el: "#sideBar",
+        el: "#main",
         data: {},
         methods: {
-            toggle() {
-                $('.ui.sidebar')
-                    .sidebar('toggle');
+            showModal() {
+                $('.mini.modal')
+                    .modal('show')
+                ;
             }
         },
         mounted() {

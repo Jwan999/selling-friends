@@ -5,11 +5,12 @@
         <div class="col-md-4">
             <div class="card mt-3">
                 <div class="card-body">
-                    <table class="ui very basic collapsing celled table">
+
+                    <table class="ui very basic table">
                         <thead>
                         <tr>
-                            <th>Users</th>
-                            <th>The friends they've sold</th>
+                            <th><h5>Users</h5></th>
+                            <th><h5>User ID</h5></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -22,7 +23,7 @@
                                     </div>
                                 </h4>
                             </td>
-                            <td class="text-center">
+                            <td>
                                 @{{ user.id }}
                             </td>
                         </tr>
@@ -39,7 +40,7 @@
             el: "#users",
             data: {
                 users: {
-                    user:{}
+                    user: {}
                 },
             },
             methods: {
@@ -49,7 +50,7 @@
                     })
                 }
             },
-            mounted(){
+            mounted() {
                 this.getUsers()
             }
         })
