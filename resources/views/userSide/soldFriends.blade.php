@@ -4,7 +4,7 @@
     <div id="sold" class="row justify-content-center">
 
         <div v-for="friend in friends" class="col-md-4">
-            <div class="card mt-2">
+            <div class="card mt-3">
                 <div class="card-body font">
                     <div class="image">
                         <img :src="friend.image">

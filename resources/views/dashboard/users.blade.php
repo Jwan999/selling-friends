@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row">
+    <div id="users" class="row">
         <div class="col">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     <table class="ui very basic collapsing celled table">
                         <thead>
@@ -19,7 +19,6 @@
                                     <img :src="user.avatar" class="ui mini rounded image">
                                     <div class="content">
                                         @{{user.name}}
-
                                     </div>
                                 </h4>
                             </td>
@@ -39,7 +38,9 @@
         new Vue({
             el: "#users",
             data: {
-                users: [],
+                users: {
+                    user:{}
+                },
             },
             methods: {
                 getUsers() {

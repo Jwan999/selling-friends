@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <div id="app" class="row justify-content-center mt-1">
+    <div id="app" class="row justify-content-center">
         <div class="col-md-5">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body font">
                     <form class="ui form" action="/sell" method="post" enctype="multipart/form-data">
                         @csrf
