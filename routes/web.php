@@ -24,6 +24,7 @@ Route::group([], function () {
 });
 
 Route::get('/api/users', 'UserController@usersApi');
+Route::get('/dashboard/users','UserController@index');
 
 Route::get('/redirect/facebook', 'Auth\LoginController@redirectToProvider')
     ->name('login');

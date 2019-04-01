@@ -43,7 +43,7 @@
             },
             methods: {
                 getUsers() {
-                    axios.get('/api/uers').then(response => {
+                    axios.get('/api/users').then(response => {
                         this.users = response.data.users
                     })
                 }
