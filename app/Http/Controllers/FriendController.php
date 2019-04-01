@@ -53,7 +53,7 @@ class FriendController extends Controller
 
     public function soldFriendApi()
     {
-        $friends = Friend::orderBy('id')->where("user_id", 1)->get();
+        $friends = Friend::orderBy('id')->where("user_id", auth()->user()->id)->get();
         $response = [
             "success" => true,
             "friends" => $friends,
