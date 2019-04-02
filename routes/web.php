@@ -27,6 +27,7 @@ Route::get('/dashboard/users', 'UserController@index');
 
 Route::get('/redirect/facebook', 'Auth\LoginController@redirectToProvider')
     ->name('login');
+
 Route::get('/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::get('logout', 'Auth\LoginController@logout');

@@ -17,17 +17,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <style>
-        body.pushable > .pusher {
+        /*body.pushable > .pusher {*/
 
-            font-family: 'Cairo', sans-serif;
-            font-size: 15px;
-            background: linear-gradient(to bottom right, #E98A98 0%, #B3B6EB 100%)
-        }
+        /*font-family: 'Cairo', sans-serif;*/
+        /*background: linear-gradient(to bottom right, #E98A98 0%, #B3B6EB 100%)*/
+        /*}*/
 
         body {
             background: linear-gradient(to bottom right, #E98A98 0%, #B3B6EB 100%);
+            font-family: 'Cairo', sans-serif;
+            /*font-size: 15px;*/
+
             /*background-repeat: no-repeat;*/
             /*background-image: cover;*/
+
+        }
+
+        .font {
+            font-family: 'Cairo', sans-serif;
 
         }
 
@@ -38,11 +45,6 @@
 
         .w {
             width: 10vw;
-        }
-
-        .font {
-            font-family: 'Cairo', sans-serif;
-            font-size: 13px;
         }
 
         .image-size {
@@ -58,7 +60,7 @@
             border-radius: 19px;
 
         }
-        
+
     </style>
     <title>Sell Your Friends</title>
 </head>
@@ -75,7 +77,7 @@
 <!-- Site content !-->
 <div id="main">
     <div class="row">
-        <div class="col mt-3">
+        <div class="col">
             <button class="ui bg-light small right attached fixed button mt-1 sticky">
                 <i class="user plus icon"></i>
                 <a href="/sell"></a>
@@ -85,12 +87,12 @@
                 <a href="/friends"></a>
             </button>
 
-            <button class="ui bg-light small left attached fixed button float-right">
+            <button class="ui bg-light small left attached fixed button mt-1 float-right">
                 <a class="text-dark" href="/">Main page</a>
                 <br>
                 <br>
                 @unless(Auth::check())
-                    <a @click="showModal" class="text-dark">Sign up</a>
+                    <a href="/login" class="text-dark">Sign up</a>
                     {{--<a href="{{ url('/redirect/facebook') }}"><i--}}
                     {{--class="fa fa-facebook mr-1"></i>Sign in with facebook</a>--}}
                 @endunless
